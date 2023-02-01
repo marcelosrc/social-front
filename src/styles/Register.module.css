@@ -14,25 +14,7 @@
   gap: 10px;
 }
 
-.email-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.username-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.password-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.dob-field {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: 5px;
