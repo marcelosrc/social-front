@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./styles/fonts/Roboto-Light.ttf";
-import "./styles/Global.module.css";
-import Home from "./pages/Home/Home";
-import Register from "./pages/Register/Register";
+import "./features/common/fonts/Roboto-Light.ttf";
+import "./features/common/Common.module.css";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
