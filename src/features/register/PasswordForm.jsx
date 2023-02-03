@@ -9,7 +9,7 @@ export default function UsernameForm(props) {
     });
   };
   return (
-    <>
+    <div className={registerStyles["form"]} ref={props.passwordForm}>
       <div className={registerStyles["form-field"]}>
         <label>
           <p>Senha</p>
@@ -31,7 +31,14 @@ export default function UsernameForm(props) {
           type="password"
           onChange={handleChange}
         />
+        <button
+          className={commonStyles["standard-button"]}
+          onClick={props.handleSubmit}
+        >
+          Próximo
+        </button>
+        <small>Voltar</small>
       </div>
-    </>
+    </div>
   );
 }

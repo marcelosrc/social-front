@@ -9,7 +9,10 @@ export default function PersonalDataForm(props) {
     });
   };
   return (
-    <>
+    <div
+      className={registerStyles["form"]}
+      ref={props.personalDataForm}
+    >
       <div className={registerStyles["form-field"]}>
         <label>
           <p>Email</p>
@@ -40,7 +43,9 @@ export default function PersonalDataForm(props) {
           name="gender"
           onChange={handleChange}
         />
+        <button className={commonStyles["standard-button"]}>Próximo</button>
+        <small>Voltar</small>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import commonStyles from "../features/common/Common.module.css";
 import registerStyles from "../features/register/Register.module.css";
 import UsernameForm from "../features/register/UsernameForm";
 import PersonalDataForm from "../features/register/PersonalDataForm";
@@ -19,18 +18,6 @@ export default function Register() {
     password: "",
     passwordConf: "",
   });
-
-  const scrollToUsernameForm = () => {
-    usernameForm.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToPersonalDataForm = () => {
-    personalDataForm.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToPasswordForm = () => {
-    passwordForm.current.scrollIntoView({ behavior: "smooth" });
-  };
 
   const handleSubmit = () => {
     fetch("/users/create", {
@@ -53,48 +40,36 @@ export default function Register() {
 
   return (
     <div className={registerStyles["container"]}>
-      <div className={registerStyles["first-form-page"]} ref={usernameForm}>
-        <UsernameForm newUser={newUser} setNewUser={setNewUser} />
-        <button
-          className={commonStyles["standard-button"]}
-          onClick={scrollToPersonalDataForm}
-        >
-          Próximo
-        </button>
-      </div>
-      <div
-        className={registerStyles["second-form-page"]}
-        ref={personalDataForm}
-      >
-        <PersonalDataForm newUser={newUser} setNewUser={setNewUser} />
-        <button
-          className={commonStyles["standard-button"]}
-          onClick={scrollToPasswordForm}
-        >
-          Próximo
-        </button>
-        <button
-          className={commonStyles["standard-button"]}
-          onClick={scrollToUsernameForm}
-        >
-          Voltar
-        </button>
-      </div>
-      <div className={registerStyles["third-form-page"]} ref={passwordForm}>
-        <PasswordForm newUser={newUser} setNewUser={setNewUser} />
-        <button
-          className={commonStyles["standard-button"]}
-          onClick={handleSubmit}
-        >
-          Criar
-        </button>
-        <button
-          className={commonStyles["standard-button"]}
-          onClick={scrollToPersonalDataForm}
-        >
-          Voltar
-        </button>
-      </div>
+      <UsernameForm
+        usernameForm={usernameForm}
+        newUser={newUser}
+        setNewUser={setNewUser}
+      />
+      <PersonalDataForm
+        personalDataForm={personalDataForm}
+        newUser={newUser}
+        setNewUser={setNewUser}
+      />
+      <PasswordForm
+        passwordForm={passwordForm}
+        newUser={newUser}
+        setNewUser={setNewUser}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
+
+/*
+  const scrollToUsernameForm = () => {
+    usernameForm.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToPersonalDataForm = () => {
+    personalDataForm.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToPasswordForm = () => {
+    passwordForm.current.scrollIntoView({ behavior: "smooth" });
+  };
+*/

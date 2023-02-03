@@ -1,21 +1,47 @@
 .container {
   height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
-.first-form-page,
-.third-form-page,
-.second-form-page {
-  height: 100%;
+.form {
+  height: inherit;
+  width: inherit;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+}
+
+.fields-area {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 10px;
 }
 
-.form-field {
+.field {
+  width: inherit;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.username-rules {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.buttons-area {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
